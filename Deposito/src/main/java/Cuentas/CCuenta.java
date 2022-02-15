@@ -5,7 +5,8 @@
 package Cuentas;
 
 /**
- *
+ * Clase con los metodos que se usaran en la cuenta corriente.
+ *@version 1.1.1
  * @author elias
  */
 public class CCuenta {
@@ -71,10 +72,22 @@ public class CCuenta {
     private String cuenta;
     private double saldo;
     private double tipoInterés;
-
+    
+    /**
+     * Constriuctor de el objeto CCuenta por defecto con valores a cero
+     */
+    
     public CCuenta()
     {
     }
+    
+    /**
+     * Crea un objeto de clase, a partir de los atributos establecidos.
+     * @param nom Nombre del usuario que la va a usar.
+     * @param cue Numero de la cuenta bancaria.
+     * @param sal Saldo del que dispone la cuenta corriente.
+     * @param tipo Tipo de cuenta corriente.
+     */
 
     public CCuenta(String nom, String cue, double sal, double tipo)
     {
@@ -83,10 +96,21 @@ public class CCuenta {
         saldo=sal;
     }
 
+    /**
+     * Calculo del saldo que disopnemos de la cuenta
+     * @return Valor de el saldo que dispone la cuenta.
+     */
+    
     public double estado()
     {
         return getSaldo();
     }
+    
+    /**
+     * Metodo para ingresar dinero en la cuenta bancaria
+     * @param cantidad Cantidad que ingresaremos en la cuenta bancaria
+     * @throws Exception Excepcion que lanzaremos si la cantidad a ingresar es negativa.
+     */
 
     public void ingresar(double cantidad) throws Exception
     {
@@ -95,6 +119,14 @@ public class CCuenta {
         setSaldo(getSaldo() + cantidad);
     }
 
+    /**
+     * Cantidad de dinero que desearemos sacar de la cuenta bancaria.
+     * @param cantidad Valor que se quiere retirar de la cuenta corriente.
+     * @throws Exception Mensaje que se lanza en el caso de querer sacar mas dinero de que dispone la cuenta,
+     * o introducir un valor negativo.
+     */
+    
+    
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
